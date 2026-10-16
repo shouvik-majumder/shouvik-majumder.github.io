@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Shouvik Majumder</title>
+  <meta name="description" content="Research on cell-type-specific synaptic plasticity and neocortical dynamics during motor learning, dopamine sensor development, and topological data analysis of EEG.">
+  <meta property="og:title" content="Research | Shouvik Majumder">
+  <meta property="og:description" content="Research on cell-type-specific synaptic plasticity and neocortical dynamics during motor learning, dopamine sensor development, and topological data analysis of EEG.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="identity">
+      <div>
+        <h1><a href="index.html">Shouvik Majumder</a></h1>
+        <p class="affiliation">PhD Candidate in Neuroscience · Max Planck Florida Institute for Neuroscience and Florida Atlantic University</p>
+      </div>
+      <div class="header-links" aria-label="Professional links">
+        <a href="mailto:Shouvik.Majumder@mpfi.org">Email</a>
+        <a href="https://scholar.google.com/citations?user=onPwMWQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/shouvik-majumder" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0000-0002-3828-3566" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://x.com/ShouvikMajumd11" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section" aria-labelledby="plasticity">
+      <h2 id="plasticity">Cell-type-specific plasticity and neocortical dynamics during motor learning</h2>
+      <p>
+        Neocortical spiking dynamics underlie voluntary behavior and are thought to emerge through synaptic
+        plasticity during learning, but the causal role of plasticity in different cortical cell types in shaping
+        population dynamics has been unclear. In my doctoral work with Hidehiko Inagaki, we manipulated
+        Ca<sup>2+</sup>/calmodulin-dependent protein kinase II (CaMKII), a key mediator of synaptic plasticity,
+        in mice learning a motor timing task. Transient CaMKII inactivation in the premotor cortex (anterior
+        lateral motor cortex, ALM) impaired learning without affecting execution of already learned actions.
+      </p>
+      <p>
+        Using cell-type-specific manipulations, we found that CaMKII-dependent plasticity in two pyramidal tract
+        (PT) neuron subtypes, but not in intratelencephalic (IT) neurons, was required for learning. With
+        concurrent large-scale electrophysiology, we found that CaMKII activity in the two PT subtypes was
+        necessary to shape distinct aspects of premotor cortical dynamics that jointly anticipate motor timing,
+        whereas IT neuron plasticity was required to reduce the dimensionality of cortical activity. We conclude
+        that synaptic plasticity in the major cortical cell types plays specialized and complementary roles in
+        sculpting cortical dynamics during learning.
+      </p>
+      <p class="ref">
+        Majumder et al., <em>Nature Communications</em> 17, 8353 (2026).
+        <a href="https://doi.org/10.1038/s41467-026-74869-1" target="_blank" rel="noopener">doi:10.1038/s41467-026-74869-1</a>
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="dopamine">
+      <h2 id="dopamine">Dopamine sensor development</h2>
+      <p>
+        In collaboration with the Tian lab, I contributed to the in vivo characterization of dLight3.8, a
+        fluorescence-intensity and lifetime-based dopamine sensor with an expanded dynamic range. Using the sensor
+        during motor learning, we observed a region-specific, gradual shift in dopamine encoding from tracking lick
+        timing to signaling reward prediction.
+      </p>
+      <p class="ref">
+        Roshgadol*, Chouinard*, Majumder&dagger;, Scott&dagger;, et al. In revision.
+        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12393496/" target="_blank" rel="noopener">Preprint</a>
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="tda">
+      <h2 id="tda">Topological data analysis of EEG</h2>
+      <p>
+        In my master's thesis at IISER Kolkata, with Koel Das, I used topological data analysis to study
+        single-trial EEG from children with autism spectrum disorder (ASD) and typically developing children while
+        they viewed images of emotional faces and non-face objects. Using features derived from persistent
+        homology, I classified ASD from typically developing participants with approximately 90% accuracy.
+        Classification was possible as early as 120 ms after stimulus onset and did not depend on whether the
+        image was a face, indicating that topological features of early visual and emotional processing in EEG
+        are a candidate biomarker for ASD.
+      </p>
+      <p class="ref">
+        Majumder, Apicella, Muratori, Das. <em>IEEE ICASSP</em> (2020).
+        <a href="https://doi.org/10.1109/ICASSP40776.2020.9054747" target="_blank" rel="noopener">doi:10.1109/ICASSP40776.2020.9054747</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><span>© <span id="yr">2026</span> Shouvik Majumder</span></div>
+  </footer>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,299 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shouvik Majumder</title>
-<meta name="description" content="Shouvik Majumder — PhD candidate in neuroscience at the Max Planck Florida Institute for Neuroscience & Florida Atlantic University. Systems and computational neuroscience, NeuroAI, and the mathematics of learning.">
-
-<!-- Open Graph / social preview -->
-<meta property="og:title" content="Shouvik Majumder">
-<meta property="og:description" content="PhD candidate in neuroscience — systems & computational neuroscience, NeuroAI, and the mathematics of learning.">
-<meta property="og:type" content="website">
-
-<style>
-  :root{
-    --bg:        #ffffff;
-    --fg:        #1c1e23;
-    --muted:     #5b616e;
-    --faint:     #8a909c;
-    --accent:    #14285a;   /* deep navy, from CV */
-    --accent-2:  #1f4a8c;   /* link blue */
-    --rule:      #e7e9ee;
-    --card:      #fafbfc;
-    --maxw:      50rem;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{
-      --bg:      #101216;
-      --fg:      #e6e8ec;
-      --muted:   #a6acb8;
-      --faint:   #757c88;
-      --accent:  #c7d4ee;
-      --accent-2:#8fb2e6;
-      --rule:    #262a31;
-      --card:    #171a1f;
-    }
-  }
-
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--fg);
-    font-family: "Charter","Georgia","Cambria",ui-serif,serif;
-    font-size:18px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  .wrap{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:3.2rem 1.4rem 4rem;
-  }
-
-  a{color:var(--accent-2); text-decoration:none; border-bottom:1px solid transparent;}
-  a:hover{border-bottom-color:var(--accent-2);}
-
-  /* ---------- Header ---------- */
-  header{margin-bottom:1.2rem;}
-  h1{
-    font-size:2.15rem;
-    line-height:1.15;
-    margin:0 0 .35rem;
-    letter-spacing:-.01em;
-    color:var(--accent);
-    font-weight:700;
-  }
-  .affil{color:var(--muted); font-size:1.02rem; margin:0 0 .9rem;}
-  .affil span{white-space:nowrap;}
-
-  .links{
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size:.9rem;
-    display:flex;
-    flex-wrap:wrap;
-    gap:.35rem .9rem;
-    margin:0;
-  }
-  .links a{color:var(--muted); border-bottom:none;}
-  .links a:hover{color:var(--accent-2);}
-
-  /* ---------- Nav ---------- */
-  nav{
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size:.82rem;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    margin:1.6rem 0 0;
-    padding:.75rem 0;
-    border-top:1px solid var(--rule);
-    border-bottom:1px solid var(--rule);
-    display:flex;
-    flex-wrap:wrap;
-    gap:1.3rem;
-  }
-  nav a{color:var(--muted); border-bottom:none;}
-  nav a:hover{color:var(--accent-2);}
-
-  /* ---------- Sections ---------- */
-  section{margin-top:2.6rem; scroll-margin-top:1rem;}
-  h2{
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size:.82rem;
-    letter-spacing:.09em;
-    text-transform:uppercase;
-    color:var(--faint);
-    font-weight:600;
-    margin:0 0 1rem;
-  }
-  p{margin:0 0 1rem;}
-  .lede{font-size:1.05rem;}
-
-  /* research themes */
-  ul.themes{list-style:none; padding:0; margin:.3rem 0 0;}
-  ul.themes li{
-    padding:.55rem 0;
-    border-bottom:1px solid var(--rule);
-    color:var(--muted);
-  }
-  ul.themes li:last-child{border-bottom:none;}
-  ul.themes b{color:var(--fg); font-weight:600;}
-
-  /* publications */
-  .pub{margin:0 0 1.5rem; padding-left:0;}
-  .pub .title{color:var(--fg);}
-  .pub .authors{color:var(--muted); font-size:.98rem;}
-  .pub .venue{color:var(--faint); font-style:italic; font-size:.95rem;}
-  .pub .venue b{font-style:normal; color:var(--accent); font-weight:600;}
-  .me{color:var(--fg); font-weight:700;}
-
-  /* talks / lists */
-  .row{
-    display:flex;
-    justify-content:space-between;
-    gap:1rem;
-    padding:.5rem 0;
-    border-bottom:1px solid var(--rule);
-    color:var(--muted);
-  }
-  .row:last-child{border-bottom:none;}
-  .row .when{color:var(--faint); font-family: ui-sans-serif, system-ui, sans-serif; font-size:.85rem; white-space:nowrap; flex:none;}
-  .row .what b{color:var(--fg); font-weight:600;}
-
-  details.more{margin-top:.4rem;}
-  details.more summary{
-    cursor:pointer; color:var(--accent-2);
-    font-family: ui-sans-serif, system-ui, sans-serif; font-size:.9rem;
-    list-style:none; padding:.4rem 0;
-  }
-  details.more summary::-webkit-details-marker{display:none;}
-  details.more summary:hover{border-bottom:1px solid var(--accent-2); width:fit-content;}
-
-  /* contact card */
-  .contact a{color:var(--accent-2);}
-  footer{
-    margin-top:3.2rem;
-    padding-top:1.2rem;
-    border-top:1px solid var(--rule);
-    color:var(--faint);
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size:.8rem;
-  }
-
-  @media (max-width:560px){
-    body{font-size:17px;}
-    h1{font-size:1.8rem;}
-    .row{flex-direction:column; gap:.1rem;}
-    .row .when{order:2;}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shouvik Majumder</title>
+  <meta name="description" content="Shouvik Majumder, PhD candidate in neuroscience at the Max Planck Florida Institute for Neuroscience and Florida Atlantic University. Systems and computational neuroscience, NeuroAI.">
+  <meta property="og:title" content="Shouvik Majumder">
+  <meta property="og:description" content="PhD candidate in neuroscience. Systems and computational neuroscience, NeuroAI.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="wrap">
-
-  <!-- ============ HEADER ============ -->
-  <header>
-    <h1>Shouvik Majumder</h1>
-    <p class="affil">
-      PhD Candidate in Neuroscience &middot;
-      <span>Max Planck Florida Institute for Neuroscience</span> &amp;
-      <span>Florida Atlantic University</span>
-    </p>
-    <p class="links">
-      <a href="mailto:Shouvik.Majumder@mpfi.org">Email</a>
-      <a href="https://scholar.google.com/citations?user=onPwMWQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
-      <a href="https://orcid.org/0000-0002-3828-3566" target="_blank" rel="noopener">ORCID</a>
-      <a href="https://x.com/ShouvikMajumd11" target="_blank" rel="noopener">X</a>
-    </p>
+  <header class="site-header">
+    <div class="identity">
+      <div>
+        <h1><a href="index.html">Shouvik Majumder</a></h1>
+        <p class="affiliation">PhD Candidate in Neuroscience · Max Planck Florida Institute for Neuroscience and Florida Atlantic University</p>
+      </div>
+      <div class="header-links" aria-label="Professional links">
+        <a href="mailto:Shouvik.Majumder@mpfi.org">Email</a>
+        <a href="https://scholar.google.com/citations?user=onPwMWQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/shouvik-majumder" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://orcid.org/0000-0002-3828-3566" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://x.com/ShouvikMajumd11" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#talks">Talks</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <main class="page">
+    <section class="section">
+      <p class="lede">
+        I am a PhD candidate in neuroscience at the
+        <a href="https://mpfi.org" target="_blank" rel="noopener">Max Planck Florida Institute for Neuroscience</a>
+        and Florida Atlantic University, working with Hidehiko Inagaki as part of the IMPRS for Circuits and
+        Synapses program. In my research, we study how synaptic plasticity in specific cell types shapes the
+        dynamics of population spiking activity in neocortical circuits during learning, using in vivo large-scale
+        extracellular electrophysiology, optogenetics, and dynamical-systems modeling.
+      </p>
+      <p>
+        I came to neuroscience with a background in mathematics. I trained at IISER Kolkata (BS&ndash;MS,
+        mathematics major with minors in physics and biology). In my master's thesis, I applied topological data
+        analysis to classification problems with EEG data from children with autism.
+      </p>
+      <p>
+        Broadly, I am interested in understanding how learning determines the geometry and dynamical properties
+        of representations in biological and artificial intelligent systems.
+      </p>
+    </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section id="about">
-    <p class="lede">
-      I'm a PhD candidate in neuroscience at the
-      <a href="https://mpfi.org" target="_blank" rel="noopener">Max Planck Florida Institute for Neuroscience</a>
-      and Florida Atlantic University, where I work with Hidehiko Inagaki as part of the
-      IMPRS for Circuits and Synapses. My research asks how <em>cell-type-specific</em> synaptic
-      plasticity reshapes the dynamics of neocortical circuits as animals learn — bringing together
-      in&nbsp;vivo Neuropixels recordings, optogenetics, and dynamical-systems modeling.
-    </p>
-    <p>
-      I came to neuroscience from mathematics and physics. I trained at IISER Kolkata (BS–MS,
-      mathematics major with minors in physics and biology), and I'm still drawn to problems where
-      geometry, topology, and dynamical systems meet neural computation. Broadly, I'm interested in
-      computational and systems neuroscience, NeuroAI, and the mathematical structure of learning in
-      biological and artificial systems.
-    </p>
-  </section>
+    <section class="section" aria-labelledby="interests">
+      <h2 id="interests">Research interests</h2>
+      <ul class="themes">
+        <li><b>Cortical dynamics during learning.</b> How cell-type-specific plasticity shapes premotor cortical activity as animals learn new behavior.</li>
+        <li><b>Dynamical-systems models of cortex.</b> Low-dimensional descriptions of population activity and how they are reshaped by plasticity and learning.</li>
+        <li><b>Geometry and topology of neural representations.</b> Topological and geometric methods to describe representations in biological and artificial neural networks.</li>
+        <li><b>Planning and goal-directed behavior.</b> How neural circuits select and sequence actions toward a goal, and how this is implemented in cortical and subcortical dynamics.</li>
+        <li><b>Generalization of task structure.</b> How neural systems learn the abstract structure of a task and reuse it in new contexts, and which representations and algorithms support this transfer.</li>
+        <li><b>NeuroAI.</b> Learning in artificial networks as a model of, and a tool for studying, learning in biological circuits.</li>
+      </ul>
+    </section>
 
-  <!-- ============ RESEARCH ============ -->
-  <section id="research">
-    <h2>Research interests</h2>
-    <ul class="themes">
-      <li><b>Cortical dynamics of learning.</b> How cell-type-specific plasticity sculpts premotor cortical activity as animals learn to time actions.</li>
-      <li><b>Dynamical-systems models of cortex.</b> Low-dimensional descriptions of population activity and how plasticity reshapes them.</li>
-      <li><b>Geometry &amp; topology of neural data.</b> Topological data analysis and geometric methods for decoding neural signals.</li>
-      <li><b>NeuroAI.</b> Connections between learning in biological circuits and in artificial systems.</li>
-    </ul>
-  </section>
+    <section class="section" aria-labelledby="news">
+      <h2 id="news">News</h2>
+      <div class="rows">
+        <div class="row"><div>Our study on cell-type-specific plasticity is published in <b>Nature Communications</b>.</div><div class="when">2026</div></div>
+        <div class="row"><div>Selected for a talk at <b>COSYNE 2026</b>, Lisbon.</div><div class="when">2026</div></div>
+        <div class="row"><div>Attended <b>Methods in Computational Neuroscience</b>, MBL, Woods Hole.</div><div class="when">2024</div></div>
+      </div>
+    </section>
 
-  <!-- ============ PUBLICATIONS ============ -->
-  <section id="publications">
-    <h2>Publications &amp; preprints</h2>
-    <p style="color:var(--faint); font-size:.9rem; margin-top:-.4rem;">(bold = lead author)</p>
+    <section class="section" aria-labelledby="contact">
+      <h2 id="contact">Contact</h2>
+      <p>Email: <a href="mailto:Shouvik.Majumder@mpfi.org">Shouvik.Majumder@mpfi.org</a></p>
+    </section>
+  </main>
 
-    <div class="pub">
-      <div class="title">Complementary roles of cell-type-specific plasticity in shaping neocortical dynamics for learning action timing.</div>
-      <div class="authors"><span class="me">S. Majumder</span>, K. Hirokawa, Z. Yang, A. Jain, R. Paletzki, C. R. Gerfen, L. Fontolan, S. Romani, R. Yasuda, H. K. Inagaki.</div>
-      <div class="venue"><b>Nature Communications</b>, 2026. &middot; <a href="https://doi.org/10.1038/s41467-026-74869-1" target="_blank" rel="noopener">doi</a></div>
-    </div>
-
-    <div class="pub">
-      <div class="title">Power-laws in dog behavior may pave the way to predictive models: a pattern analysis study.</div>
-      <div class="authors">A. Banerjee, N. Das, R. Dey, <span class="me">S. Majumder</span>, P. Shit, A. Banerjee, N. Ghosh, A. Bhadra.</div>
-      <div class="venue"><b>Heliyon</b>, 2021. &middot; <a href="https://doi.org/10.1016/j.heliyon.2021.e07243" target="_blank" rel="noopener">doi</a></div>
-    </div>
-
-    <div class="pub">
-      <div class="title">Detecting Autism Spectrum Disorder using topological data analysis.</div>
-      <div class="authors"><span class="me">S. Majumder</span>, F. Apicella, F. Muratori, K. Das.</div>
-      <div class="venue"><b>IEEE ICASSP</b>, 2020. &middot; <a href="https://doi.org/10.1109/ICASSP40776.2020.9054747" target="_blank" rel="noopener">doi</a></div>
-    </div>
-  </section>
-
-  <!-- ============ TALKS ============ -->
-  <section id="talks">
-    <h2>Selected talks</h2>
-    <div class="row"><div class="what"><b>Selected talk</b> — COSYNE, Lisbon, Portugal</div><div class="when">Mar 2026</div></div>
-    <div class="row"><div class="what"><b>Invited seminar</b> — CHINTA, TCG CREST, Kolkata, India</div><div class="when">Dec 2025</div></div>
-    <div class="row"><div class="what"><b>Colloquium</b> — CoNNExINS, New York University</div><div class="when">Jun 2024</div></div>
-    <div class="row"><div class="what"><b>Seminar</b> — SyBeCo, Georgia Tech</div><div class="when">May 2024</div></div>
-
-    <details class="more">
-      <summary>More talks &amp; posters</summary>
-      <div class="row"><div class="what"><b>Workshop talk</b> — End-to-End Imaging Workflows for Neuroscience, MPFI–ZEISS Workshop</div><div class="when">May 2024</div></div>
-      <div class="row"><div class="what"><b>Webinar</b> — Neural Probe Techniques, Cambridge NeuroTech</div><div class="when">Apr 2024</div></div>
-      <div class="row"><div class="what">Poster — Complementary roles of cell-type-specific plasticity in shaping premotor dynamics, Sunposium, West Palm Beach</div><div class="when">2026</div></div>
-      <div class="row"><div class="what">Poster — Cell-type-specific plasticity shapes neocortical dynamics for motor learning, COSYNE, Lisbon</div><div class="when">2024</div></div>
-      <div class="row"><div class="what">Poster — Cell-type-specific plasticity shapes neocortical dynamics for motor learning, SfN, Washington D.C.</div><div class="when">2023</div></div>
-      <div class="row"><div class="what">Poster — Topological Data Analysis in Autism Detection, IEEE ICASSP</div><div class="when">2020</div></div>
-    </details>
-  </section>
-
-  <!-- ============ NEWS ============ -->
-  <section id="news">
-    <h2>News</h2>
-    <div class="row"><div class="what">Our study on cell-type-specific plasticity is out in <b>Nature Communications</b>.</div><div class="when">2026</div></div>
-    <div class="row"><div class="what">Selected for a talk at <b>COSYNE 2026</b> in Lisbon.</div><div class="when">2026</div></div>
-    <div class="row"><div class="what">Attended <b>Methods in Computational Neuroscience</b> (MBL, Woods Hole).</div><div class="when">2024</div></div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>
-      The best way to reach me is by email at
-      <a href="mailto:Shouvik.Majumder@mpfi.org">Shouvik.Majumder@mpfi.org</a>.
-      I'm always happy to talk about cortical dynamics, learning, and the mathematics of neural computation.
-    </p>
-  </section>
-
-  <footer>
-    © <span id="yr">2026</span> Shouvik Majumder · Built with plain HTML &amp; CSS.
+  <footer class="site-footer">
+    <div class="footer-inner"><span>© <span id="yr">2026</span> Shouvik Majumder</span></div>
   </footer>
-
-</div>
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
