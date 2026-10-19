@@ -36,13 +36,19 @@
   <main class="page">
     <section class="section" aria-labelledby="projects">
       <h2 id="projects">Projects</h2>
-      <p>Papers in mechanistic interpretability and neural representation geometry that I have reimplemented, and a small analysis package. Code is on <a href="https://github.com/shouvik-majumder" target="_blank" rel="noopener">GitHub</a>.</p>
+      <p>Papers in mechanistic interpretability and neural representation geometry that I have reimplemented, a small analysis package, and a study in progress. Code is on <a href="https://github.com/shouvik-majumder" target="_blank" rel="noopener">GitHub</a>.</p>
 
       <div class="project-list">
         <article class="project">
           <h3>Belief state geometry in transformers</h3>
           <p>I trained small transformers on hidden Markov processes (Mess3 and RRXOR) and used linear probes to test whether the Bayesian belief state over hidden states is linearly represented in the residual stream, following Shai et al. (NeurIPS 2024).</p>
           <p class="links"><a href="https://github.com/shouvik-majumder/belief-geometry" target="_blank" rel="noopener">Code</a> · <a href="https://arxiv.org/abs/2405.15943" target="_blank" rel="noopener">Paper</a></p>
+        </article>
+
+        <article class="project">
+          <h3>Local learning coefficient over training</h3>
+          <p>I implemented the SGLD estimator of the local learning coefficient of Lau et al. (2023), validated it on models with known coefficients, and tracked it over training of the belief-geometry transformers, following Hoogland et al. (2024).</p>
+          <p class="links"><a href="https://github.com/shouvik-majumder/llc" target="_blank" rel="noopener">Code</a> · <a href="https://arxiv.org/abs/2402.02364" target="_blank" rel="noopener">Paper</a></p>
         </article>
 
         <article class="project">
@@ -61,6 +67,12 @@
           <h3>Steering resistance</h3>
           <p>I steered Gemma-2 models with Gemma Scope sparse autoencoder directions and measured how often the model returns to the original question under steering, following McKenzie et al. (ICML 2026).</p>
           <p class="links"><a href="https://github.com/shouvik-majumder/steering-resistance" target="_blank" rel="noopener">Code</a> · <a href="https://arxiv.org/abs/2602.06941" target="_blank" rel="noopener">Paper</a></p>
+        </article>
+
+        <article class="project">
+          <h3>Fine-tuning dynamics</h3>
+          <p>A study in progress. I fine-tuned Qwen2.5-1.5B with LoRA on two narrow tasks, a substitution cipher and synthetic facts, and measured task accuracy, the local learning coefficient, and linear-probe accuracy for the task variable at log-spaced checkpoints.</p>
+          <p class="links"><a href="https://github.com/shouvik-majumder/finetune-dynamics" target="_blank" rel="noopener">Code</a></p>
         </article>
 
         <article class="project">
